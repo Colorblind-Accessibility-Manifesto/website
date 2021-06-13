@@ -1,0 +1,60 @@
+
+$max-width: 800px;
+$max-overflow: 100px;
+
+.issues-section {
+    padding-top: 60px;
+
+    .issue {
+        h2 {
+            font-family: 'Zilla Slab', sans-serif;
+            font-weight: bold;
+            font-size: 2.6rem;
+
+            @include media-breakpoint-up(md) {
+                font-size: 3.5em;
+            }
+            @include media-breakpoint-up(xxl) {
+                font-size: 4.4em;
+            }
+        }
+
+        h4 {
+            font-family: 'Metropolis', sans-serif;
+            font-weight: bold;
+            font-size: .5rem;
+
+            @include media-breakpoint-up(md) {
+                font-size: .9em;
+            }
+            @include media-breakpoint-up(xxl) {
+                font-size: 1.4em;
+            }
+
+            margin-left: 20px;
+        }
+
+        h2, h4 {
+            display: inline-block;
+        }
+
+        p {
+            font-family: 'Inter', sans-serif;
+            font-weight: normal;
+            font-size: 1.5rem;
+
+            max-width: $max-width + $max-overflow;
+        }
+
+        &:last-of-type {
+            + hr {
+                display: none;
+            }
+        }
+    }
+
+    hr {
+        max-width: $max-width;
+    }
+
+}

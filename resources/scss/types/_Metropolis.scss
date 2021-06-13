@@ -1,0 +1,26 @@
+
+$font-family: 'Metropolis';
+
+@font-face {
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 600;
+    src: url('../../fonts/Metropolis/Metropolis-semibold-webfont.woff') format("woff2"),
+         url('../../fonts/Metropolis/Metropolis-semibold-webfont.woff') format("woff");
+}
+
+@font-face {
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 700;
+    src: url('../../fonts/Metropolis/Metropolis-bold-webfont.woff') format("woff2"),
+         url('../../fonts/Metropolis/Metropolis-bold-webfont.woff') format("woff");
+}
+
+@font-face {
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 800;
+    src: url('../../fonts/Metropolis/Metropolis-extrabold-webfont.woff') format("woff2"),
+         url('../../fonts/Metropolis/Metropolis-extrabold-webfont.woff') format("woff");
+}

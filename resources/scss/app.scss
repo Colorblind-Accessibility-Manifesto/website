@@ -1,0 +1,38 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "~bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+@import "variables";
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+
+// 4. Include any optional Bootstrap sections as you like
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/buttons";
+
+// 5. Helpers
+@import "~bootstrap/scss/helpers";
+
+// 6. Utilities
+@import "~bootstrap/scss/utilities/api";
+
+// 7. Add additional custom code here
+@import "types/Metropolis";
+
+//
+@import "sections/section";
+@import "sections/main-section";
+@import "sections/rules-section";
+@import "sections/signers-section";
+@import "sections/issue-section";
+@import "sections/issues-section";

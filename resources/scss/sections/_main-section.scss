@@ -1,0 +1,196 @@
+
+.main-section {
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+
+    padding-top:    2.5rem;
+    padding-bottom: 2.5rem;
+
+    display: flex;
+
+    >.row {
+        flex: 1;
+    }
+
+    .logo-text {
+        @extend .d-inline-block;
+
+        font-size: 2.8em;
+
+        @include media-breakpoint-up(md) {
+            font-size: 5em;
+        }
+        @include media-breakpoint-up(xxl) {
+            font-size: 6.5em;
+        }
+
+        font-family: 'Zilla Slab', sans-serif;
+        font-weight: bold;
+        line-height: 95%;
+
+        position: relative;
+        top: -15px;
+    }
+
+    .navigation-buttons-container {
+        @extend .d-flex;
+        @extend .justify-content-end;
+
+        max-width: 700px;
+
+        margin-right: auto;
+        margin-left: 0;
+
+        @include media-breakpoint-up(xl2) {
+            margin-right: 0;
+            margin-left: auto;
+        }
+
+        .navigation-buttons {
+            @extend .d-inline-block;
+            @extend .flex-grow-1;
+            @extend .flex-wrap;
+
+            @include media-breakpoint-up(sm2) {
+                justify-content: flex-start!important;
+            }
+
+            @include media-breakpoint-up(xl2) {
+                justify-content: flex-end!important;
+            }
+
+
+            @extend .d-sm2-flex;
+
+            .btn-container {
+                @extend .d-inline-block;
+                width: 100%;
+
+                margin-right: 32px;
+
+                .btn-wrapper {
+                    $border-thickness: 4px;
+                    $border-padding  : 3px;
+
+                    border: $border-thickness solid transparent;
+                    border-radius: 10px;
+                    display: inline-block!important;
+                    height: auto;
+                    line-height: 0;
+                    padding: $border-padding 2px;
+                    top: -#{$border-padding * 2};
+                    position: relative;
+
+                    @include media-breakpoint-down(sm2) {
+                        margin-top: 20px;
+                    }
+
+                    &.selected {
+                        border: $border-thickness solid $color-blue;
+                    }
+                }
+
+                @include media-breakpoint-up(xl2) {
+                    margin-right: 40px;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                @include media-breakpoint-up(sm2) {
+                    width: auto;
+                }
+
+                .btn {
+                    $height:    30px;
+                    $padding-x: 15px;
+
+                    &:focus {
+                        box-shadow: none;
+                    }
+
+                    @extend .position-relative;
+                    @extend .float-start;
+                    @extend .float-sm2-end;
+
+                    padding: 0 $padding-x;
+
+                    height: $height;
+                    line-height: 105%;
+
+                    font-family: 'Metropolis', sans-serif;
+                    font-weight: 600;
+                }
+
+                .btn-icon {
+                    $size: 30px;
+                    @extend .d-none;
+                    @extend .d-xl2-inline-block;
+
+
+                    height: $size;
+                    width: $size;
+
+                    margin-right: 4px;
+
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+
+                    &.paper {
+                        background-image: url('../../img/emoji/page-with-curl.png');
+                    }
+                    &.signing {
+                        background-image: url('../../img/emoji/writing-hand.png');
+                    }
+                    &.crying {
+                        background-image: url('../../img/emoji/loudly-crying-face.png');
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-left-text {
+        $bottom-left-text-height: 30px;
+
+        padding-top: 15px;
+
+        a {
+            font-size: 2.2em;
+            font-family: Metropolis, sans-serif;
+            font-weight: 800;
+
+            @include media-breakpoint-up(md) {
+                font-size: 2.6em;
+            }
+            @include media-breakpoint-up(xxl) {
+                font-size: 2.8em;
+            }
+
+            color: $color-black;
+        }
+
+        // margin-top: calc(var(--vh, 1vh) * 100 - #{$bottom-left-text-height})
+    }
+
+    .bottom-right-logo {
+        text-align: right;
+
+        padding: 15px 0;
+
+        @include media-breakpoint-down(xl) {
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            padding: 0 20px;
+
+            @include media-breakpoint-down(md) {
+                padding: 0 35px;
+            }
+        }
+    }
+}
