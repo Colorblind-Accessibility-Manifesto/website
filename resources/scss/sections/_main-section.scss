@@ -3,8 +3,8 @@
     width: 100vw;
     height: calc(var(--vh, 1vh) * 100);
 
-    padding-top:    2.5rem;
-    padding-bottom: 2.5rem;
+    padding-top:    $padding-y;
+    padding-bottom: $padding-y;
 
     display: flex;
 
@@ -56,17 +56,14 @@
             }
 
             @include media-breakpoint-up(xl2) {
-                justify-content: flex-end!important;
+                justify-content: space-between!important;
             }
-
 
             @extend .d-sm2-flex;
 
             .btn-container {
                 @extend .d-inline-block;
                 width: 100%;
-
-                margin-right: 32px;
 
                 .btn-wrapper {
                     $border-thickness: 4px;
@@ -90,9 +87,6 @@
                     }
                 }
 
-                @include media-breakpoint-up(xl2) {
-                    margin-right: 40px;
-                }
 
                 &:last-child {
                     margin-right: 0;
@@ -103,24 +97,9 @@
                 }
 
                 .btn {
-                    $height:    30px;
-                    $padding-x: 15px;
-
-                    &:focus {
-                        box-shadow: none;
-                    }
-
                     @extend .position-relative;
                     @extend .float-start;
                     @extend .float-sm2-end;
-
-                    padding: 0 $padding-x;
-
-                    height: $height;
-                    line-height: 105%;
-
-                    font-family: 'Metropolis', sans-serif;
-                    font-weight: 600;
                 }
 
                 .btn-icon {

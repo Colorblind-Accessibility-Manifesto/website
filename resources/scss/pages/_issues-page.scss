@@ -1,0 +1,122 @@
+
+.issues-page {
+    #issue-modal {
+
+        .field-wrapper {
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            &.textarea {
+                align-items: flex-start;
+
+                .field-info {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .field-value {
+                    textarea {
+                        resize: none;
+
+                        $line-height: 31px;
+
+                        line-height: $line-height;
+                        background-image: linear-gradient(transparent, transparent calc(#{$line-height} - 1.5px), $color-black 0px);
+                        background-size: 100% $line-height;
+
+                        border: none;
+                        outline: none;
+                    }
+                }
+            }
+
+            .field-icon {
+                $size: 25px;
+
+                width: $size;
+                height: $size;
+
+                display: inline-block;
+
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+
+                &.description {
+                    background-image: url('../../img/icons/modal/description.svg');
+                }
+
+                &.world {
+                    background-image: url('../../img/icons/modal/world.svg');
+                }
+
+                &.list {
+                    background-image: url('../../img/icons/modal/list.svg');
+                }
+
+                &.calendar {
+                    background-image: url('../../img/icons/modal/calendar.svg');
+                }
+            }
+
+            .field-key {
+                display: inline-block;
+                margin-left: 20px;
+
+                font-family: 'Metropolis', sans-serif;
+                font-weight: bold;
+
+                font-size: 1.8em;
+
+                // @include media-breakpoint-up(md) {
+                //     font-size: .9em;
+                // }
+                // @include media-breakpoint-up(xxl) {
+                //     font-size: 1.4em;
+                // }
+            }
+
+            .field-value {
+                display: inline-block;
+                flex: 1;
+
+                margin-left: 10px;
+
+                &.short-width {
+                    flex: 0;
+                }
+
+                input,
+                textarea {
+                    width: 100%;
+                    font-family: 'Inter', sans-serif;
+                    font-weight: normal;
+
+                    font-size: 1.4em;
+                }
+
+                input,
+                &:focus,
+                &:focus-visible {
+                    display: inline-block;
+                    outline: none;
+                    border-width: 0;
+                    border-color: $color-black;
+                    border-bottom-width: 2px;
+                }
+            }
+
+            margin-top: 25px;
+
+            &:nth-child(1) {
+                margin-top: 0;
+            }
+
+            &:nth-child(2) {
+                margin-top: 60px;
+            }
+        }
+
+    }
+}

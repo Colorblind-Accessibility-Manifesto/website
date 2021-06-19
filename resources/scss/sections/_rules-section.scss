@@ -2,10 +2,10 @@
 $max-width: 800px;
 $max-overflow: 100px;
 
-.issues-section {
+.rules-section {
     padding-top: 60px;
 
-    .issue {
+    .rule {
         h2 {
             font-family: 'Zilla Slab', sans-serif;
             font-weight: bold;
@@ -55,6 +55,7 @@ $max-overflow: 100px;
 
     hr {
         max-width: $max-width;
+        margin: $rules-padding-y 0;
     }
 
 }

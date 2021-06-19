@@ -1,0 +1,19 @@
+
+.btn {
+    $height:    30px;
+    $padding-x: 15px;
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    @extend .position-relative;
+
+    padding: 0 $padding-x;
+
+    height: $height;
+    line-height: 105%;
+
+    font-family: 'Metropolis', sans-serif;
+    font-weight: 600;
+}

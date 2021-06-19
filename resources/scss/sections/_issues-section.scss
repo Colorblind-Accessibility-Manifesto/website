@@ -4,6 +4,7 @@ $max-overflow: 100px;
 
 .issues-section {
     padding-top: 60px;
+    min-height: calc(var(--vh, 1vh) * 100);
 
     .issue {
         h2 {
@@ -27,8 +28,10 @@ $max-overflow: 100px;
             max-width: $max-width + $max-overflow;
         }
 
-        &:last-of-type {
-            + hr {
+        &:last-of-type,
+        &:last-child {
+            // + hr if the hr element is adjacent
+            hr {
                 display: none;
             }
         }

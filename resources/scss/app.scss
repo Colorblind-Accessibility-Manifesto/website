@@ -30,9 +30,19 @@
 @import "types/Metropolis";
 
 //
+@import "global";
+
+//
 @import "sections/section";
 @import "sections/main-section";
 @import "sections/rules-section";
 @import "sections/signers-section";
 @import "sections/issue-section";
 @import "sections/issues-section";
+
+//
+@import "pages/issues-page";
+
+//
+@import "components/buttons";
+@import "components/modal";
