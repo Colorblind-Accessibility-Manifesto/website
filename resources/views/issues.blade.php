@@ -15,7 +15,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
-<body>
+<body class="issues-page">
 <section class="container-fluid main-section issue-section flex-column">
     <div class="row">
         <div class="col-12 col-xl2-5">
@@ -37,28 +37,90 @@
                     @if(count(config('cam.issues')) === 0)
                         There are no open issues
                     @else
-                        {{ count(config('cam.issues')) }} Open @if(count(config('cam.issues')) === 1) issue @else issues @endif found
+                        {{ count(config('cam.issues')) }} open @if(count(config('cam.issues')) === 1) issue @else issues @endif found
                     @endif
                 </h2>
-
+                <button type="button" class="btn btn-dark" id="add-an-issue">Add an issue</button>
             </div>
         </div>
     </div>
 </section>
 
+@php
+    $issues = collect(config('cam.issues'));
+    $issues = $issues->map(function($issue) use ($issues) {
+        $issue['slug'] = Str::slug($issue['title']);
+        return $issue;
+    });
+
+    $issues = $issues->map(function($issue1) use ($issues) {
+        $issue1['count'] = $issues->filter(function($issue2) use ($issue1) {
+            return $issue1['slug'] === $issue2['slug'];
+        })->count();
+        return $issue1;
+    });
+
+    $filters = $issues->unique('slug');
+@endphp
+
 @if(count(config('cam.issues')) > 0)
     <section class="container-fluid issues-section" id="issues-section">
-        @foreach(config('cam.issues') as $rule)
-            <div class="issue">
+
+        <div class="filter-issues">
+            <select id="filter-issues">
+                <option value="">Choose the website:</option>
+                @foreach($filters as $filter)
+                    <option value="{!! $filter['slug'] !!}">{!! $filter['title'] !!} ({{ $filter['count'] }})</option>
+                @endforeach
+            </select>
+        </div>
+
+
+        @foreach($issues as $rule)
+            <div class="issue" data-slug="{!! $rule['slug']  !!}">
                 <h2>{!! $rule['title'] !!}</h2> <h4>{!! $rule['date']->format('Y-m-d') !!}</h4>
                 <p>{!! $rule['description'] !!}</p>
-            </div>
 
-            <hr />
+                <hr />
+            </div>
         @endforeach
     </section>
 @endif
 
+<div class="modal-background shsow" id="issue-modal">
+    <div class="modal">
+        <div class="field-wrapper">
+            <div class="field-icon description"></div>
+            <div class="field-key">Fill in the fields below to make a report</div>
+        </div>
+        <div class="field-wrapper">
+            <div class="field-icon world"></div>
+            <div class="field-key">Website link (URL):</div>
+            <div class="field-value">
+                <input type="text" name="url" />
+            </div>
+        </div>
+        <div class="field-wrapper textarea">
+            <div class="field-info">
+                <div class="field-icon list"></div>
+                <div class="field-key">Issue description:</div>
+            </div>
+            <div class="field-value">
+                <textarea name="issue" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="field-wrapper">
+            <div class="field-icon calendar"></div>
+            <div class="field-key">Date:</div>
+            <div class="field-value short-width">
+                <input type="date" name="date" />
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="{{ mix('js/app.js') }}"></script>
+<script src="{{ mix('js/modal.js') }}"></script>
+<script src="{{ mix('js/issues.js') }}"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
                 <a href="{{ url('/') }}" class="btn-wrapper">
                     <div class="btn-icon paper"></div>
                     <button type="button" class="btn btn-dark signing">
-                        Read the rules
+                        Read the manifesto
                     </button>
                 </a>
             </div>
