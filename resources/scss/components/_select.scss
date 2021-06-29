@@ -1,0 +1,79 @@
+
+.custom-select-panel {
+    width: auto;
+    transition: none;
+}
+
+.custom-select-option {
+    &.is-selected {
+        &:before {
+            content: none;
+        }
+    }
+}
+
+.custom-select-container {
+    .custom-select-opener {
+        display: inline-block;
+        width: auto;
+
+        > span {
+            &:after {
+                background-image: url('data:image/svg+xml;utf8,<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.98787 0.506429C6.25307 0.506486 6.50738 0.61188 6.69487 0.799429L11.6949 5.79943C11.877 5.98803 11.9778 6.24063 11.9755 6.50283C11.9733 6.76503 11.8681 7.01584 11.6827 7.20125C11.4973 7.38666 11.2465 7.49182 10.9843 7.4941C10.7221 7.49638 10.4695 7.39559 10.2809 7.21343L5.98787 2.92043L1.69487 7.21343C1.50627 7.39559 1.25367 7.49638 0.991473 7.4941C0.729277 7.49183 0.478464 7.38666 0.293056 7.20125C0.107647 7.01584 0.00247854 6.76503 0.000200185 6.50283C-0.00207817 6.24063 0.0987157 5.98803 0.280874 5.79943L5.28087 0.79943C5.46837 0.61188 5.72268 0.506486 5.98787 0.506429Z" fill="white"/></svg>');
+                background-repeat: no-repeat;
+                background-position: center;
+                content: ' ';
+                display: inline-block;
+                transition: 150ms linear all;
+                position: relative;
+                top: 1px;
+
+                $size: 12px;
+
+                width: $size * 2;
+                height: $size;
+            }
+        }
+    }
+
+    &.is-open {
+        .custom-select-opener {
+            > span {
+                &:after {
+                    transform: rotateX(180deg);
+                }
+            }
+        }
+    }
+
+    .custom-select-opener {
+        background-color: black;
+    }
+
+    .custom-select-option {
+        background-color: black;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-blue;
+        }
+
+        &.is-selected {
+            background-color: darken($color-blue, 10%)!important;
+        }
+    }
+
+    color: white;
+
+    font-family: 'Metropolis', sans-serif;
+    font-weight: 600;
+
+    border-radius: 5px;
+
+    margin-bottom: 25px;
+
+    &.is-open {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}

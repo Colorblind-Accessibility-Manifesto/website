@@ -2,4 +2,11 @@
 .container-fluid {
     padding-right: $padding-x;
     padding-left: $padding-x;
+
+    @include media-breakpoint-down(md) {
+        $sf: .45;
+
+        padding-right: $padding-x * $sf;
+        padding-left: $padding-x * $sf;
+    }
 }

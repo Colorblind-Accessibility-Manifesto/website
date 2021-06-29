@@ -16,6 +16,9 @@ mix.disableNotifications();
 
 mix
     .js('resources/js/app.js', 'public/js')
+    .js('resources/js/modal.js', 'public/js')
+    .js('resources/js/issues.js', 'public/js')
+
     .sass('resources/scss/app.scss', 'public/css')
     .copyDirectory('resources/fonts', 'public/fonts')
     .copyDirectory('resources/img'  , 'public/img');

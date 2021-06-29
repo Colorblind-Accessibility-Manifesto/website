@@ -21,12 +21,14 @@
             position: absolute;
             left: 50%;
             transform: translate(-50%, 50%);
-            bottom: calc(var(--vh, 1vh) * 50);
+            bottom: 50%;
+            // bottom: calc(var(--vh, 1vh) * 50);
 
             text-align: center;
 
             @include media-breakpoint-down(sm2) {
-                bottom: calc(var(--vh, 1vh) * 38);
+                bottom: 30%;
+                // bottom: calc(var(--vh, 1vh) * 38);
             }
 
             @include media-breakpoint-down(lg) {
@@ -65,9 +67,7 @@
                 }
             }
 
-            .btn {
-
-            }
+            .btn {}
         }
 
     }

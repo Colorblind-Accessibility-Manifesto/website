@@ -30,43 +30,21 @@
                 </div>
             </div>
             <div class="row align-items-end">
-                <div class="col-12 col-xl-6 bottom-left-text">
-                    <a href="{{ url('/call-for-dev') }}">
-                        <div class="sos-call-for-dev small">
-                            <img src="{{ asset('img/emoji/sos-icon.png') }}" alt="sos-icon" />
-                            <div>Call for devs</div>
-                        </div>
-                    </a>
-
-                    <a href="#rules-section">Read the 10 rules</a>
-                </div>
-                <div class="col-12 col-xl-6 bottom-right-logo">
-                    <img src="{{ mix('img/logo.svg') }}" alt="Logo" />
-                </div>
-            </div>
-        </section>
-
-        <section class="container-fluid rules-section" id="rules-section">
-            @foreach(config('cam.rules') as $rule)
-                <div class="rule">
-                    <h2>{!! $rule['title'] !!}</h2>
-                    <p>{!! $rule['rule'] !!}</p>
-                </div>
-
-                <hr />
-            @endforeach
-        </section>
-
-        <section class="container-fluid signers-section">
-            <h2>Colorblind Accessibility Manifesto</h2>
-            <h5>is co-signed by</h5>
-
-            <div class="signers">
-                @foreach(config('cam.signers') as $signer)
-                    <div class="signer">
-                        {{ $signer }}
+                <div class="col-12">
+                    <div class="sos-call-for-dev">
+                        <img src="{{ asset('img/emoji/sos-icon.png') }}" alt="sos-icon" />
+                        <div>Call for devs</div>
                     </div>
-                @endforeach
+
+                    <div class="sos-call-for-dev-sub">
+                        We are currently working on developing a web extension
+                        in order to help color-blind people surfing the internet.
+                    </div>
+
+                    <div class="sos-call-for-dev-sub">
+                        Join the team by sending an email to <a href="mailto:{{ config('cam.config.signing-email.address') }}">{{ config('cam.config.signing-email.address') }}</a>
+                    </div>
+                </div>
             </div>
         </section>
 

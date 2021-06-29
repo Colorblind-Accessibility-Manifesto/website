@@ -56,7 +56,9 @@
             }
 
             @include media-breakpoint-up(xl2) {
-                justify-content: space-between!important;
+                display: inline-block!important;
+                text-align: right;
+                // justify-content: space-between!important;
             }
 
             @extend .d-sm2-flex;
@@ -170,6 +172,60 @@
             @include media-breakpoint-down(md) {
                 padding: 0 35px;
             }
+        }
+    }
+
+    // SOS SECTION
+    .sos-call-for-dev {
+        display: flex;
+        align-content: center;
+        align-items: center;
+
+        img {
+            width: 60px;
+        }
+
+        div {
+            display: inline-block;
+            font-family: 'Zilla Slab', sans-serif;
+            font-weight: bold;
+            font-size: 3.3rem;
+            text-decoration: underline;
+            margin-left: 20px;
+
+            @include media-breakpoint-down(md) {
+                font-size: 2.2rem;
+            }
+        }
+
+        &.small {
+            img {
+                width: 35px;
+            }
+
+            div {
+                font-size: 2.2rem;
+                margin-left: 10px;
+            }
+
+            margin-bottom: calc(var(--vh, 1vh) * 10);
+        }
+    }
+
+    .sos-call-for-dev-sub {
+        @include media-breakpoint-down(md) {
+            font-size: 1.4rem;
+            width: 100%;
+        }
+
+        margin-top: 30px;
+        width: 65%;
+        font-family: 'Inter', sans-serif;
+        font-weight: normal;
+        font-size: 1.6rem;
+
+        a {
+            color: $color-black;
         }
     }
 }

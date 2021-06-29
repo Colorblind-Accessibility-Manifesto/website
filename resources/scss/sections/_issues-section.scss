@@ -6,6 +6,8 @@ $max-overflow: 100px;
     padding-top: 60px;
     min-height: calc(var(--vh, 1vh) * 100);
 
+    .filter-issues {}
+
     .issue {
         h2 {
             font-family: 'Zilla Slab', sans-serif;
@@ -39,6 +41,7 @@ $max-overflow: 100px;
 
     hr {
         max-width: $max-width;
+        margin: $issues-padding-y 0;
     }
 
 }
