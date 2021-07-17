@@ -21,4 +21,8 @@ mix
 
     .sass('resources/scss/app.scss', 'public/css')
     .copyDirectory('resources/fonts', 'public/fonts')
-    .copyDirectory('resources/img'  , 'public/img');
+    .copyDirectory('resources/img'  , 'public/img')
+
+    .options({
+        processCssUrls: false
+    });
