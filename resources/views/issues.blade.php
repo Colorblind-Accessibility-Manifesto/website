@@ -167,6 +167,8 @@
     </div>
 </div>
 
+@include('fragments/footer')
+
 {!! NoCaptcha::renderJs() !!}
 <script src="{{ mix('js/app.js') }}"></script>
 <script src="{{ mix('js/modal.js') }}"></script>

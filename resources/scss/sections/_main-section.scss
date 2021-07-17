@@ -1,7 +1,9 @@
 
 .main-section {
     width: 100vw;
-    height: calc(var(--vh, 1vh) * 100);
+
+    height: auto;
+    min-height: calc(var(--vh, 1vh) * 100);
 
     padding-top:    $padding-y;
     padding-bottom: $padding-y;
@@ -160,12 +162,14 @@
         text-align: right;
 
         padding: 15px 0;
+        height: 420px;
 
         @include media-breakpoint-down(xl) {
             text-align: center;
         }
 
         img {
+            max-height: 100%;
             max-width: 100%;
             padding: 0 20px;
 

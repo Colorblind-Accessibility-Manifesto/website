@@ -33,6 +33,16 @@
         }
     }
 
+    h2, h5 {
+        span {
+            // bad fix
+            &.adjust-line-height {
+                position: relative;
+                bottom: 6px;
+            }
+        }
+    }
+
     .signers {
         margin-top: 50px;
         padding-bottom: 30px;

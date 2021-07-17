@@ -59,7 +59,7 @@
 
         <section class="container-fluid signers-section">
             <h2>Colorblind Accessibility Manifesto</h2>
-            <h5>is co-signed by</h5>
+            <h5>is co-signed by <span class="adjust-line-height">{{ count(config('cam.signers')) }}</span> designers</h5>
 
             <div class="signers">
                 @foreach(config('cam.signers') as $signer)
@@ -69,6 +69,8 @@
                 @endforeach
             </div>
         </section>
+
+        @include('fragments/footer')
 
         <script src="{{ mix('js/app.js') }}"></script>
     </body>
